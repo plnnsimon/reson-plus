@@ -1,6 +1,3 @@
-import path from 'path'
-import { fileURLToPath } from 'node:url'
-
 export default defineNuxtConfig({
   runtimeConfig: {
     mongoUri: process.env.NUXT_MONGO_URI,
@@ -89,7 +86,7 @@ export default defineNuxtConfig({
     transpile: ['vue-toastification'],
   },
 
-  routeRules: {
-    '/': { redirect: '/landing' },
-  },
+  // routeRules: {
+  //   '/': { redirect: '/landing' },
+  // },
 })

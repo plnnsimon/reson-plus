@@ -1,10 +1,5 @@
 <script setup>
-import BaseButton from '~/components/ui/base-button/BaseButton.vue'
 import BaseSlider from '~/components/ui/base-slider/BaseSlider.vue'
-// import BaseTitle from '~/components/ui/base-title/BaseTitle.vue'
-import StatisticsWidget from '~/components/sections/statistics/statistics-widget/StatisticsWidget.vue'
-
-import { ref, onMounted } from 'vue'
 import OurClients from '~/components/sections/our-clients/OurClients.vue'
 import PricesSection from '~/components/sections/prices-section/PricesSection.vue'
 import ProductsSection from '~/components/sections/products-section/ProductsSection.vue'
@@ -12,6 +7,9 @@ import Brands from '~/components/sections/brands/Brands.vue'
 import NewsSection from '~/components/sections/news-section/NewsSection.vue'
 import FindUs from '~/components/sections/find-us/FindUs.vue'
 import PriceListButton from '~/components/shared/form-components/price-list-button/PriceListButton.vue'
+import StatisticsWidget from '~/components/sections/statistics/statistics-widget/StatisticsWidget.vue'
+
+import { ref, onMounted } from 'vue'
 
 definePageMeta({
   layout: 'landing',

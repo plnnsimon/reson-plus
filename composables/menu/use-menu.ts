@@ -3,7 +3,7 @@ interface Contact {
   type: 'phone' | 'mail'
 }
 
-interface MenuItem {
+export interface MenuItem {
   title: string
   key?: string
   link?: string

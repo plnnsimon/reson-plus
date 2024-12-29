@@ -3,17 +3,34 @@ import BaseButton from '~/components/ui/base-button/BaseButton.vue'
 import BaseIcon from '~/components/ui/base-icon/BaseIcon.vue'
 import MobileMenu from '~/components/general/mobile-menu/MobileMenu.vue'
 
-import { useMenu } from '~/composables/menu/use-menu'
+import { type MenuItem, useMenu } from '~/composables/menu/use-menu'
 
+const route = useRoute()
+const router = useRouter()
 const { MENU_ITEMS, scrollToSection } = useMenu()
 const mobileMenuOpened = ref(false)
+
+async function scrollToSectionWrapper(item: MenuItem) {
+  const isMainPage = route.path.split('/')[1] === ''
+  if (!isMainPage) {
+    await router.push('/')
+  }
+
+  setTimeout(() => {
+    scrollToSection(item.key)
+  }, 100)
+}
+
+async function goToMainPage() {
+  await router.push('/')
+}
 </script>
 
 <template>
   <header class="header">
     <div class="header__container">
       <div class="header__head">
-        <div class="header__logo">
+        <div class="header__logo" @click="goToMainPage">
           <img src="/img/logo1.png" alt="logo" class="header__logo-img" />
         </div>
 
@@ -31,12 +48,13 @@ const mobileMenuOpened = ref(false)
             :key="item.key"
             class="header__nav-item"
           >
-            <a
+            <NuxtLink
+              :to="item.link"
               class="header__nav-link body-typography"
-              @click="scrollToSection(item.key)"
+              @click="scrollToSectionWrapper(item)"
             >
               {{ item.title }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
