@@ -1,0 +1,140 @@
+@use 'assets/scss/variables/colors.scss' as *;
+@use 'assets/scss/variables/base.scss' as *;
+@use 'assets/scss/variables/media-breakpoints' as *;
+
+.footer {
+  background: $text-dark;
+  color: $text-light;
+  padding: 0 24px;
+
+  @include media-breakpoint-down(md) {
+    padding: 0 15px 80px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+  }
+
+  &__logo {
+    padding: 80px 0 40px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid transparent-color($text-light, 0.5);
+
+    @include media-breakpoint-down(sm) {
+      padding: 32px 0 32px;
+    }
+  }
+
+  &__content {
+    padding: 0 0 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include media-breakpoint-down(sm) {
+      grid-gap: 32px;
+      grid-template-columns: 1fr;
+      padding: 0 0 32px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      grid-gap: 23px;
+    }
+  }
+
+  &__section {
+    &_right {
+      display: flex;
+      grid-gap: 116px;
+
+      @include media-breakpoint-down(md) {
+        grid-gap: 50px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        grid-gap: 32px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        grid-gap: 20px;
+      }
+    }
+  }
+
+  &__block {
+    &-title {
+      margin-bottom: 32px;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-list {
+      display: grid;
+      grid-gap: 22px;
+
+      @include media-breakpoint-down(sm) {
+        grid-gap: 8px;
+      }
+    }
+
+    &-item {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &-link {
+        transition: color ease $transition-duration;
+        cursor: pointer;
+        color: $text-light;
+
+        @include media-breakpoint-down(sm) {
+          font-size: 16px;
+        }
+
+        &:hover {
+          color: $main;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    //height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 32px;
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column-reverse;
+    }
+
+    &-text {
+      width: 100%;
+    }
+
+    &-socials {
+      display: flex;
+      grid-gap: 32px;
+
+      @include media-breakpoint-down(xs) {
+        grid-gap: 24px;
+      }
+    }
+
+    &-social {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+
+      &-icon {
+        height: 27px;
+        width: 27px;
+        fill: $text-light;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use 'assets/scss/variables/media-breakpoints' as *;
+
+.button {
+  &__title {
+    @include media-breakpoint-down(xs) {
+      font-size: 14px;
+    }
+  }
+}

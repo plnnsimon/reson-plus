@@ -1,0 +1,83 @@
+@use 'assets/scss/variables/colors.scss' as *;
+@use 'assets/scss/variables/media-breakpoints' as *;
+
+.news {
+  &__container {}
+
+  &__title {
+    margin-bottom: 40px;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 30px;
+
+    @include media-breakpoint-down(md) {
+      grid-gap: 15px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__block {
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 32px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+      padding: 15px;
+    }
+
+    @include media-breakpoint-down(xxs) {
+      height: 300px;
+    }
+
+    &-title {
+      color: $text-light;
+    }
+
+    &:nth-of-type(1) {
+      background-image: url('/img/news-1.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-width: 730px;
+
+      @include media-breakpoint-down(sm) {
+        max-width: 100%;
+      }
+
+      .news__block-action {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('/img/news-2.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      max-width: 350px;
+
+      @include media-breakpoint-down(sm) {
+        max-width: 100%;
+        background-size: cover;
+      }
+
+      .news__block-action {
+        width: 100%;
+        max-width: 255px;
+      }
+    }
+  }
+}

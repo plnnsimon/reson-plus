@@ -1,0 +1,67 @@
+@use 'assets/scss/variables/media-breakpoints' as *;
+@use 'assets/scss/variables/colors.scss' as *;
+@use 'assets/scss/variables/base.scss' as *;
+
+%h3-typography {
+  font: $base-font;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.h1 {
+  font: $base-font;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: normal;
+
+  @include media-breakpoint-down(md) {
+    font-size: 28px;
+  }
+}
+
+.h2 {
+  font: $base-font;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.h3 {
+  font: $base-font;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.h3 {
+  @extend %h3-typography;
+}
+
+.h4, .h4-button {
+  font: $base-font;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 160%;
+}
+
+.body-typography {
+  font-family: $secondary-font;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.body-2-typography {
+  font-family: $secondary-font;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.body-3-typography {
+  font-family: $secondary-font;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 160%;
+}

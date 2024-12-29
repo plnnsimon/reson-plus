@@ -1,0 +1,28 @@
+@import 'assets/scss/variables/colors.scss';
+@import 'assets/scss/variables/base.scss';
+
+.button {
+  background: $main;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: background-color ease $transition-duration, opacity ease $transition-duration;
+  height: 52px;
+  padding: 12px 24px;
+
+  &:hover {
+    background: $hover;
+  }
+
+  &:active {
+    background: $press;
+  }
+
+  &.disabled {
+    background: $disabled;
+    color: $text-light;
+    opacity: 0.5;
+  }
+}

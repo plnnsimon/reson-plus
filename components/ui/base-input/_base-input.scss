@@ -1,0 +1,96 @@
+@import 'assets/scss/variables/colors';
+@import 'assets/scss/variables/base';
+
+.input {
+  --input-padding: 12px;
+  --input-title-color: inherit;
+  --input-height: inherit;
+  --input-border: 1px solid #{$main};
+  --input-container-gap: 0;
+  display: grid;
+
+  &__title {
+    color: var(--input-title-color);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-bottom: 4px;
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
+  }
+
+  &__container {
+    position: relative;
+    background: transparent;
+    border: var(--input-border);
+    padding: var(--input-padding);
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    height: var(--input-height);
+    grid-gap: var(--input-container-gap);
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    &-error {
+      position: absolute;
+      //bottom: -18px;
+      top: calc(100% + 5px);
+      left: 0;
+      color: $error;
+      font-size: 14px;
+      user-select: none;
+      pointer-events: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      touch-action: none;
+      -webkit-touch-callout: none;
+    }
+  }
+
+  &__field {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    background: transparent;
+
+    color: inherit;
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: var(--system-default-font-size);
+    text-overflow: ellipsis;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    &::placeholder {
+      color: $text-light;
+      transition: opacity ease $transition-duration;
+    }
+
+    &:focus {
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import 'assets/scss/variables/colors.scss';
+
+.input-button {
+  display: flex;
+  align-items: center;
+
+  &__input {}
+
+  &__button {
+    position: relative;
+    height: 54px;
+    width: 54px;
+
+    &-component {
+      border-radius: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-loading {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      --spinner-width: 40px;
+    }
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    fill: $text-light;
+    //transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,39 @@
+@import 'assets/scss/variables/colors.scss';
+@import 'assets/scss/variables/base.scss';
+
+.statistic-card {
+  border-radius: 20px;
+  padding: 27px 24px;
+  background: $text-light;
+  transition: background-color ease $transition-duration, color ease $transition-duration;
+  cursor: default;
+  display: grid;
+
+  &_secondary {
+    background: $text-dark;
+    color: $main;
+
+    .statistic-card {
+      &__content {
+        color: $text-light;
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    grid-gap: 16px;
+    align-items: center;
+
+    &-title {
+      &_main {}
+
+      &_addition {}
+    }
+  }
+
+  &__content {
+    margin-top: 16px;
+    overflow-y: auto;
+  }
+}

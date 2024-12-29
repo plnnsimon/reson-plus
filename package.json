@@ -1,0 +1,42 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.12.1",
+    "@pinia/nuxt": "^0.5.5",
+    "@vee-validate/nuxt": "^4.14.7",
+    "@vee-validate/yup": "^4.14.7",
+    "axios": "^1.7.9",
+    "mongoose": "^8.7.0",
+    "nuxt": "^3.13.0",
+    "nuxt-swiper": "^2.0.0",
+    "pinia": "^2.2.4",
+    "vee-validate": "^4.12.7",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue": "^3.4.14",
+    "vue-router": "latest",
+    "vue-toastification": "^2.0.0-rc.5",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.79.4",
+    "vue-eslint-parser": "^9.4.2"
+  },
+  "engines": {
+    "node": "22.10.0"
+  }
+}

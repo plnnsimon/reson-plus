@@ -1,0 +1,234 @@
+@use 'assets/scss/variables/colors.scss' as *;
+@use 'assets/scss/variables/media-breakpoints' as *;
+@use 'assets/scss/variables/typography' as *;
+
+.prices {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 30px;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      grid-gap: 0;
+    }
+  }
+
+  &__block {
+    &-title {
+      margin-bottom: 16px;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 64px;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 32px;
+      }
+    }
+
+    &-button {
+      &_mobile {
+        @include media-breakpoint-up(sm) {
+          display: none;
+        }
+
+        @include media-breakpoint-down(xs) {
+          width: 100%;
+        }
+      }
+
+      &_desktop {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+    }
+
+    &_left {
+      width: 100%;
+      max-width: 540px;
+
+      @media screen and (max-width: 1050px) {
+        max-width: 400px;
+      }
+
+      @include media-breakpoint-down(md) {
+        max-width: 300px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        max-width: 100%;
+      }
+    }
+
+    &_right {
+      width: fit-content;
+      position: relative;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: auto;
+      }
+    }
+
+    &-background {
+      background-image: url('/img/prices-bg.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 656px;
+      width: 640px;
+      position: absolute;
+      left: 106px;
+      top: -10%;
+
+      @include media-breakpoint-down(md) {
+        height: 500px;
+        left: 20px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 478px;
+        width: 470px;
+        left: 20px;
+        top: 0;
+      }
+
+      @include media-breakpoint-down(xs) {
+        height: 358px;
+        width: 350px;
+      }
+
+      @include media-breakpoint-down(xxs) {
+        height: 328px;
+        width: 320px;
+      }
+    }
+  }
+
+  &__products {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(24, 1fr);
+    grid-template-columns: repeat(24, 1fr);
+    z-index: 1;
+    grid-column-gap: 20px;
+
+    @include media-breakpoint-down(md) {
+      grid-column-gap: 10px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__product {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    padding: 21px 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: $text-light;
+    //background: red;
+    box-shadow: 2px 4px 20px -5px #00000030;
+
+    @include media-breakpoint-down(md) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 140px;
+      height: 140px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include media-breakpoint-down(xxs) {
+      width: 85px;
+      height: 85px;
+    }
+
+    &_1 {
+      grid-row: 10 / span 8;
+      grid-column: 1 / span 8;
+    }
+
+    &_2 {
+      grid-row: 6 / span 8;
+      grid-column: 9 / span 8;
+    }
+
+    &_3 {
+      grid-row: 14 / span 8;
+      grid-column: 9 / span 8;
+    }
+
+    &_4,
+    &_5,
+    &_6 {
+      grid-column: 17 / span 8;
+    }
+
+    &_4 {
+      grid-row: 2 / span 8;
+    }
+
+    &_5 {
+      grid-row: 10 / span 8;
+    }
+
+    &_6 {
+      grid-row: 18 / span 8;
+    }
+
+    &-image {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+
+      @include media-breakpoint-down(md) {
+        width: 36px;
+        height: 36px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 44px;
+        height: 44px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        width: 36px;
+        height: 36px;
+      }
+
+      @include media-breakpoint-down(xxs) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &-title {
+      text-align: center;
+
+      @include media-breakpoint-down(md) {
+        font-size: 12px;
+      }
+
+      @include media-breakpoint-down(xxs) {
+        font-size: 10px;
+      }
+    }
+  }
+}

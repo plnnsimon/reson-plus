@@ -1,0 +1,24 @@
+@use "sass:color";
+
+$text-light: #FEFEFE;
+$text-dark: #1C1C1C;
+
+$background: #F6F6F6;
+
+$disabled: rgba(246, 246, 246, 0.25);
+
+$hover: #FFDA58;
+$main: #FFC908;
+$press: #FFC908;
+$error: #F1585B;
+
+$gradient: linear-gradient(45deg, rgba(255, 201, 8, 0.25) 0%, rgba(246, 246, 246, 0.15) 100%);
+
+@function transparent-color($color, $transparency) {
+  //$red: red($color);
+  //$green: green($color);
+  //$blue: blue($color);
+  //
+  //@return rgba($red, $green, $blue, $transparency)
+  @return color.change($color, $alpha: $transparency);
+}
